@@ -25,7 +25,7 @@ if(Session::has('user')){
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home </a></li>
-        <li class=""><a href="#">Orders </a></li>
+        <li class=""><a href="/myorders">Orders </a></li>
       </ul>
       <form action="/search" class="navbar-form navbar-left" >
         <div class="form-group">
@@ -35,7 +35,9 @@ if(Session::has('user')){
       </form>
       <ul class="nav navbar-nav navbar-right">
        <li>
-         <b><a href="#">Cart({{$total}})</a> </b> 
+         <b><a href="/cartList">Cart({{$total}})</a> </b> 
+         <li> <a href="/login">Login</a></li>
+<li> <a href="/register"> Registration </a></li>
        </li>
        @if(Session::has('user'))
        <li class="dropdown">
@@ -48,6 +50,7 @@ if(Session::has('user')){
 </li>
 @else
 <li> <a href="/login">Login</a></li>
+<li> <a href="/register"> Registration </a></li>
 @endif
       </ul>
     </div><!-- /.navbar-collapse -->
